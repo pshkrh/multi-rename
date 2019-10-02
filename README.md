@@ -39,4 +39,4 @@ If you have any bug fixes / useful feature additions, feel free to fork this rep
 
 ## License
 
-[MIT](https://github.com/pshkrh/multi-rename/master/LICENSE.md)
+[MIT](https://github.com/pshkrh/multi-rename/blob/master/README.md)
