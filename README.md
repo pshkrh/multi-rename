@@ -20,7 +20,7 @@ multi_renamer('/path/to/dir/here','file_name')
 
 ## Example
 
-```
+```Python
 multi_renamer('/home/test_imgs/','newname')
 ```
 
