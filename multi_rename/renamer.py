@@ -1,11 +1,10 @@
 import os
 import logging
 
-def multi_renamer(dir_path=None, new_name=None, increment=1):
+def full_rename(dir_path=None, new_name=None, idx=1, increment=1):
 
     if None not in (dir_path,new_name):
         file_list = os.listdir(dir_path)
-        idx = 1
         for file in file_list:
             file_name = dir_path + os.path.splitext(file)[0] + os.path.splitext(file)[1]
             extension = os.path.splitext(file)[1]
