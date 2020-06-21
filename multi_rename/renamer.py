@@ -1,6 +1,22 @@
 import os
 import logging
 
+def add_prefix(dir_path=None, prefix=None, sep=''):
+    if dir_path is not None and prefix is not None:
+        if not dir_path.endswith(os.path.sep):
+            dir_path += os.path.sep
+
+        file_list = os.listdir(dir_path)
+
+        for file_str in file_list:
+            file_path = os.path.join(dir_path, file_str)
+            file_name, extension = os.path.splitext(file_str)
+
+            if not os.path.isdir(file_path):
+                repl_name = prefix + sep + file_name + extension
+                repl_path = os.path.join(dir_path, repl_name)
+                os.replace(file_path, repl_path)
+
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=''):
 
     if None not in (dir_path, new_name):
