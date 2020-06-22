@@ -35,7 +35,7 @@ def add_suffix(dir_path=None, suffix=None, sep=''):
 
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=''):
 
-    if None not in (dir_path, new_name):
+    if dir_path is not None and new_name is not None:
         if not dir_path.endswith(os.path.sep):
             dir_path += os.path.sep
 
