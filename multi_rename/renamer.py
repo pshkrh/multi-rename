@@ -1,4 +1,5 @@
-"""Renamer Module.
+"""
+Renamer Module.
 
 This module contains functions for adding affixes,
 and for full renaming.
@@ -25,7 +26,8 @@ process, files with these extensions can be ignored.
 import os
 
 def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
-    """Add an affix to the existing file names in a directory.
+    """
+    Add an affix to the existing file names in a directory.
 
     Parameters
     ----------
@@ -77,7 +79,8 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[])
 
 
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep='', filter_ext=[]):
-    """Rename all the files with a new name with incrementing numbers.
+    """
+    Rename all the files with a new name with incrementing numbers.
 
     Parameters
     ----------
