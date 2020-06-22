@@ -1,8 +1,8 @@
 import os
 import logging
 
-def add_prefix(dir_path=None, prefix=None, sep=''):
-    if dir_path is not None and prefix is not None:
+def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
+    if dir_path is not None and affix is not None:
         if not dir_path.endswith(os.path.sep):
             dir_path += os.path.sep
 
@@ -12,24 +12,15 @@ def add_prefix(dir_path=None, prefix=None, sep=''):
             file_path = os.path.join(dir_path, file_str)
             file_name, extension = os.path.splitext(file_str)
 
-            if not os.path.isdir(file_path):
-                repl_name = prefix + sep + file_name + extension
-                repl_path = os.path.join(dir_path, repl_name)
-                os.replace(file_path, repl_path)
-
-def add_suffix(dir_path=None, suffix=None, sep=''):
-    if dir_path is not None and suffix is not None:
-        if not dir_path.endswith(os.path.sep):
-            dir_path += os.path.sep
-
-        file_list = os.listdir(dir_path)
-
-        for file_str in file_list:
-            file_path = os.path.join(dir_path, file_str)
-            file_name, extension = os.path.splitext(file_str)
+            if filter_ext and extension[1:] in filter_ext:
+                continue
 
             if not os.path.isdir(file_path):
-                repl_name = file_name + sep + suffix + extension
+                if affix_type == 'prefix':
+                    repl_name = affix + sep + file_name + extension
+                elif affix_type == 'suffix':
+                    repl_name = file_name + sep + affix + extension
+                
                 repl_path = os.path.join(dir_path, repl_name)
                 os.replace(file_path, repl_path)
 
