@@ -2,6 +2,7 @@
 
 [![PyPI Release](https://img.shields.io/pypi/v/multi-rename?color=blue)](https://img.shields.io/pypi/v/multi-rename?color=blue)
 [![GitHub Release](https://img.shields.io/github/v/release/pshkrh/multi-rename)](https://img.shields.io/github/v/release/pshkrh/multi-rename)
+[![License](https://img.shields.io/pypi/l/multi-rename)](https://img.shields.io/pypi/l/multi-rename)
 
 A python module for renaming multiple files in a directory to a common format ending in incrementing numbers.
 
