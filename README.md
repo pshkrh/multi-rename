@@ -1,4 +1,4 @@
-# multi-rename
+# 📄 multi-rename
 
 A python module for renaming multiple files in a directory to a common format ending in incrementing numbers.
 
