@@ -25,7 +25,7 @@ process, files with these extensions can be ignored.
 
 import os
 
-def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
+def add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=None):
     """
     Add an affix to the existing file names in a directory.
 
@@ -60,10 +60,16 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[])
             # Skip any directories
             if not os.path.isdir(file_path):
 
+                if filter_ext is None:
+                    filter_ext = []
+
                 # Skip any files which have extensions
                 # that are to be ignored
                 if filter_ext and extension[1:] in filter_ext:
                     continue
+
+                if sep is None:
+                    sep = ''
 
                 # Create the new file name
                 if affix_type == 'prefix':
@@ -78,7 +84,7 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[])
                 os.replace(file_path, repl_path)
 
 
-def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep='', filter_ext=[]):
+def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filter_ext=None):
     """
     Rename all the files with a new name with incrementing numbers.
 
@@ -116,10 +122,16 @@ def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep='', filter
             # Skip any directories
             if not os.path.isdir(file_path):
 
+                if filter_ext is None:
+                    filter_ext = []
+
                 # Skip any files which have extensions
                 # that are to be ignored
                 if filter_ext and extension[1:] in filter_ext:
                     continue
+
+                if sep is None:
+                    sep = ''
 
                 # Create the new file name
                 repl_name = new_name + sep + str(idx) + extension
