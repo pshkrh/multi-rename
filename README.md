@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/pypi/l/multi-rename)](https://img.shields.io/pypi/l/multi-rename)
 
 A python module for renaming multiple files in a directory to a common format ending in incrementing numbers.
+It also supports adding a prefix or suffix to each file in a directory.
 
 ## Installation
 
