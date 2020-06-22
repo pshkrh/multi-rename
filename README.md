@@ -1,5 +1,6 @@
 # 📄 multi-rename
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e86b9c1b48944dd5b4095d640e145709)](https://app.codacy.com/manual/pshkrh/multi-rename?utm_source=github.com&utm_medium=referral&utm_content=pshkrh/multi-rename&utm_campaign=Badge_Grade_Dashboard)
 [![PyPI Release](https://img.shields.io/pypi/v/multi-rename?color=blue)](https://img.shields.io/pypi/v/multi-rename?color=blue)
 [![GitHub Release](https://img.shields.io/github/v/release/pshkrh/multi-rename)](https://img.shields.io/github/v/release/pshkrh/multi-rename)
 [![License](https://img.shields.io/pypi/l/multi-rename)](https://img.shields.io/pypi/l/multi-rename)
