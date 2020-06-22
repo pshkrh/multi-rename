@@ -1,5 +1,4 @@
 import os
-import logging
 
 def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
     """Adds an affix to the existing file names in a directory
