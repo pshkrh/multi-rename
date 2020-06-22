@@ -1,3 +1,27 @@
+"""Renamer Module.
+
+This module contains functions for adding affixes,
+and for full renaming.
+
+An affix can either be a prefix or suffix.
+Depending on the chosen type, the affix string
+will be added to the start or end of the file name
+respectively.
+
+For full renaming, a new name is required which will be
+given to all the files in a directory.
+
+By default, the trailing numbers will start from 1,
+with an increment of 1. 
+This can be configured as required.
+
+A separator can also be optionally added between
+the new name and the trailing number.
+
+If any file types need to be excluded from the renaming
+process, files with these extensions can be ignored.
+"""
+
 import os
 
 def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
