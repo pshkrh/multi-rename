@@ -41,7 +41,7 @@ renamer.full_rename('/home/test_imgs/','newname')
 
 This will make all the files in the directory to be renamed as:
 
-```
+```md
 newname1.jpg
 newname2.pdf
 newname3.png
