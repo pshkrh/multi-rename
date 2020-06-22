@@ -2,7 +2,6 @@ import os
 
 def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[]):
     """Adds an affix to the existing file names in a directory
-
     Parameters
     ----------
     dir_path : str
@@ -56,7 +55,6 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[])
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep='', filter_ext=[]):
     """Renames all the files in a directory with a new name
     with incrementing numbers
-
     Parameters
     ----------
     dir_path : str
