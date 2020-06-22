@@ -9,6 +9,7 @@ setuptools.setup(
     author="Pushkar Kurhekar",
     author_email="dev@pshkrh.com",
     description="Easily rename multiple files ending with incrementing numbers.",
+    keywords='multi batch rename all files',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pshkrh/multi-rename",
@@ -20,5 +21,5 @@ setuptools.setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.3',
 )
