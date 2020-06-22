@@ -12,7 +12,7 @@ For full renaming, a new name is required which will be
 given to all the files in a directory.
 
 By default, the trailing numbers will start from 1,
-with an increment of 1. 
+with an increment of 1.
 This can be configured as required.
 
 A separator can also be optionally added between
@@ -68,7 +68,7 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep='', filter_ext=[])
                     repl_name = affix + sep + file_name + extension
                 elif affix_type == 'suffix':
                     repl_name = file_name + sep + affix + extension
-                
+
                 # Create the destination path
                 repl_path = os.path.join(dir_path, repl_name)
 
