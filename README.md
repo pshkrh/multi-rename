@@ -1,8 +1,8 @@
 # 📄 multi-rename
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e86b9c1b48944dd5b4095d640e145709)](https://app.codacy.com/manual/pshkrh/multi-rename?utm_source=github.com&utm_medium=referral&utm_content=pshkrh/multi-rename&utm_campaign=Badge_Grade_Dashboard)
 [![PyPI Release](https://img.shields.io/pypi/v/multi-rename?color=blue)](https://img.shields.io/pypi/v/multi-rename?color=blue)
 [![GitHub Release](https://img.shields.io/github/v/release/pshkrh/multi-rename)](https://img.shields.io/github/v/release/pshkrh/multi-rename)
+[![Codacy Badge](https://img.shields.io/codacy/grade/8d7af7a05c6444bebecdac0e86a7d9dc)](https://img.shields.io/codacy/grade/8d7af7a05c6444bebecdac0e86a7d9dc)
 [![License](https://img.shields.io/pypi/l/multi-rename)](https://img.shields.io/pypi/l/multi-rename)
 
 A python module for renaming multiple files in a directory to a common format ending in incrementing numbers.
