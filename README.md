@@ -13,15 +13,23 @@ pip install multi-rename
 ## Usage
 
 ```Python
-from multi-rename import multi_renamer
+from multi_rename import renamer
 
-multi_renamer('/path/to/dir/here','file_name')
+# Full Rename
+renamer.full_rename(dir_path='/path/to/dir/here', new_name='new_file_name')
+
+# Add prefix
+renamer.add_affix(dir_path='/path/to/dir/here', affix='prefix_to_add', affix_type='prefix')
+
+# Add suffix
+renamer.add_affix(dir_path='/path/to/dir/here', affix='suffix_to_add', affix_type='suffix')
+
 ```
 
 ## Example
 
 ```Python
-multi_renamer('/home/test_imgs/','newname')
+renamer.full_rename('/home/test_imgs/','newname')
 ```
 
 This will make all the files in the directory to be renamed as:
