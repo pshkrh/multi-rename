@@ -44,7 +44,14 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=N
     filter_ext : list of str, optional
         List of file extensions that should be ignored
         (default is an empty list)
+
+    Returns
+    -------
+    renamed_files : list
+        List of renamed file names.
     """
+    renamed_files = []
+
     if dir_path is not None and affix is not None:
 
         # Handle trailing slash
@@ -83,6 +90,10 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=N
                 # Rename the file
                 os.replace(file_path, repl_path)
 
+                renamed_files.append(repl_name)
+
+    return renamed_files
+
 
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filter_ext=None):
     """
@@ -106,7 +117,14 @@ def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filt
     filter_ext : list of str, optional
         List of file extensions that should be ignored
         (default is an empty list)
+
+    Returns
+    -------
+    renamed_files : list
+        List of renamed file names.
     """
+    renamed_files = []
+
     if dir_path is not None and new_name is not None:
 
         # Handle trailing slash
@@ -142,3 +160,7 @@ def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filt
 
                 # Rename the file
                 os.replace(file_path, repl_path)
+
+                renamed_files.append(repl_name)
+
+    return renamed_files
