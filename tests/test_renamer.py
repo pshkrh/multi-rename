@@ -1,6 +1,4 @@
-"""
-Unit tests for the multi rename library.
-"""
+"""Unit tests for the multi rename library."""
 
 from multi_rename import renamer
 import os
