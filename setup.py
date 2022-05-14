@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="multi-rename",
-    version="0.0.3",
+    version="0.0.4",
     author="Pushkar Kurhekar",
     author_email="contact@pshkrh.com",
     description="Easily rename multiple files ending with incrementing numbers.",
