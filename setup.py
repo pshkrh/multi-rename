@@ -7,7 +7,7 @@ setuptools.setup(
     name="multi-rename",
     version="0.0.2",
     author="Pushkar Kurhekar",
-    author_email="dev@pshkrh.com",
+    author_email="contact@pshkrh.com",
     description="Easily rename multiple files ending with incrementing numbers.",
     keywords='multi batch rename all files',
     long_description=long_description,
