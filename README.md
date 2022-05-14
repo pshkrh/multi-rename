@@ -36,11 +36,12 @@ renamer.add_suffix(dir_path='/path/to/dir/here', suffix='suffix_to_add', sep='-'
 
 ## Example
 
-### Folder structure
+### Folder structure with sample files
 ```md
 expenses.xlsx
 report.pdf
 essay.docx
+webpage.html
 ...
 ```
 
@@ -55,9 +56,9 @@ This will rename all the file names in `dir_path` to `print-this` followed by a 
 print-this-1.xlsx
 print-this-2.pdf
 print-this-3.docx
+print-this-4.html
 ...
 ```
-
 
 ### Adding a prefix
 ```Python
@@ -70,9 +71,9 @@ This will rename all the file names in `dir_path` to start with `v1-`:
 v1-expenses.xlsx
 v1-report.pdf
 v1-essay.docx
+v1-webpage.html
 ...
 ```
-
 
 ### Adding a suffix
 ```Python
@@ -85,6 +86,22 @@ This will rename all the file names in `dir_path` to end with `_old`:
 expenses_old.xlsx
 report_old.pdf
 essay_old.docx
+webpage_old.html
+...
+```
+
+### Changing file extensions
+```Python
+renamer.change_extension(dir_path='/home/dir_path/', new_ext='txt', filter_ext='html')
+```
+
+This will change all the file extensions in `dir_path` to `.txt`, except any `.html` files:
+
+```md
+expenses.txt
+report.txt
+essay.txt
+webpage.html
 ...
 ```
 
