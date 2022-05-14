@@ -180,3 +180,64 @@ def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filt
                 renamed_files.append(repl_name)
 
     return renamed_files
+
+
+def change_extension(dir_path=None, new_ext=None, filter_ext=None):
+    """
+    Change the file extensions for all files in a directory.
+
+    Parameters
+    ----------
+    dir_path : str
+        The directory which contains the files that need to be renamed
+    new_ext: str
+        The new file extension
+    filter_ext : list of str, optional
+        List of file extensions that should be ignored
+        (default is an empty list)
+
+    Returns
+    -------
+    renamed_file_exts : list
+        List of renamed file names and extensions.
+    """
+    renamed_files = []
+
+    if dir_path is not None and new_ext is not None:
+        # Handle trailing slash
+        if not dir_path.endswith(os.path.sep):
+            dir_path += os.path.sep
+
+        file_list = os.listdir(dir_path)
+
+        for file_str in file_list:
+            file_path = os.path.join(dir_path, file_str)
+            file_name, extension = os.path.splitext(file_str)
+
+            # Skip any directories
+            if not os.path.isdir(file_path):
+
+                if filter_ext is None:
+                    filter_ext = []
+
+                # Skip any files which have extensions
+                # that are to be ignored
+                if filter_ext and extension[1:] in filter_ext:
+                    continue
+
+                # Add a '.' to the file extension if not present
+                if '.' not in new_ext:
+                    new_ext = '.' + new_ext
+
+                # Create the new file name
+                repl_name = file_name + new_ext
+
+                # Create the destination path
+                repl_path = os.path.join(dir_path, repl_name)
+
+                # Rename the file
+                os.replace(file_path, repl_path)
+
+                renamed_files.append(repl_name)
+    
+    return renamed_files
