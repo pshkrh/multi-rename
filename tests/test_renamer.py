@@ -68,3 +68,26 @@ class TestRenamer:
         shutil.copytree(src_test_data, test_file_dir)
 
         assert sorted(test_renamed_files) == sorted(renamed_files)
+
+    def test_extension_rename(self):
+        test_file_dir = os.path.join(os.getcwd(), 'tests', 'data')
+        src_test_data = os.path.join(os.getcwd(), 'tests', 'src_data')
+
+        filenames = os.listdir(test_file_dir)
+        idx = 1
+
+        test_renamed_files = []
+        for filename in filenames:
+            if not os.path.isdir(os.path.join(test_file_dir, filename)):
+                name, extension = os.path.splitext(filename)
+                if extension[1:] != 'html':
+                    test_renamed_files.append(name + '.txt')
+                    idx += 1
+
+        renamed_files = renamer.change_extension(
+            dir_path=test_file_dir, new_ext='txt', filter_ext='html')
+
+        shutil.rmtree(test_file_dir)
+        shutil.copytree(src_test_data, test_file_dir)
+
+        assert sorted(test_renamed_files) == sorted(renamed_files)
