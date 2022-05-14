@@ -25,7 +25,7 @@ process, files with these extensions can be ignored.
 
 import os
 
-def add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=None):
+def __add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=None):
     """
     Add an affix to the existing file names in a directory.
 
@@ -93,6 +93,22 @@ def add_affix(dir_path=None, affix=None, affix_type=None, sep=None, filter_ext=N
                 renamed_files.append(repl_name)
 
     return renamed_files
+
+
+def add_prefix(dir_path=None, prefix=None, sep=None, filter_ext=None):
+    """
+    Add a prefix to the existing file names in a directory.
+    Wrapper for the __add_affix() function.
+    """
+    return __add_affix(dir_path=dir_path, affix=prefix, affix_type='prefix', sep=sep, filter_ext=filter_ext)
+
+
+def add_suffix(dir_path=None, suffix=None, sep=None, filter_ext=None):
+    """
+    Add a prefix to the existing file names in a directory.
+    Wrapper for the __add_affix() function.
+    """
+    return __add_affix(dir_path=dir_path, affix=suffix, affix_type='suffix', sep=sep, filter_ext=filter_ext)
 
 
 def full_rename(dir_path=None, new_name=None, idx=1, increment=1, sep=None, filter_ext=None):

@@ -14,10 +14,12 @@ class TestRenamer:
         test_renamed_files = []
         for filename in os.listdir(test_file_dir):
             if not os.path.isdir(os.path.join(test_file_dir, filename)):
-                test_renamed_files.append('pre_' + filename)
+                _, ext = os.path.splitext(filename)
+                if ext[1:]!= 'pptx':
+                    test_renamed_files.append('pre_' + filename)
 
-        renamed_files = renamer.add_affix(
-            dir_path=test_file_dir, affix_type='prefix', affix='pre', sep='_')
+        renamed_files = renamer.add_prefix(
+            dir_path=test_file_dir, prefix='pre', sep='_', filter_ext='pptx')
 
         shutil.rmtree(test_file_dir)
         shutil.copytree(src_test_data, test_file_dir)
@@ -32,10 +34,11 @@ class TestRenamer:
         for filename in os.listdir(test_file_dir):
             if not os.path.isdir(os.path.join(test_file_dir, filename)):
                 name, ext = os.path.splitext(filename)
-                test_renamed_files.append(name + '_suff' + ext)
+                if ext[1:]!= 'xlsx':
+                    test_renamed_files.append(name + '_suff' + ext)
 
-        renamed_files = renamer.add_affix(
-            dir_path=test_file_dir, affix_type='suffix', affix='suff', sep='_')
+        renamed_files = renamer.add_suffix(
+            dir_path=test_file_dir, suffix='suff', sep='_', filter_ext='xlsx')
 
         shutil.rmtree(test_file_dir)
         shutil.copytree(src_test_data, test_file_dir)
